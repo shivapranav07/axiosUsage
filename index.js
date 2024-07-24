@@ -22,7 +22,7 @@ app.get('/numbers', async (req, res) => {
     try {
         // Use a for loop to fetch numbers from each URL
         for (const url of urls) {
-            try {
+            try   {   
                 // Make a GET request to the URL with a timeout
                 const response = await axios.get(url);
                 // Add the 'numbers' array from the response to the list
