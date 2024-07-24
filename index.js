@@ -1,9 +1,6 @@
 const express = require('express'); // Import the express library
 const axios = require('axios'); // Import the axios library for making HTTP requests
-
 const app = express(); // Create an instance of an Express application
-const PORT = process.env.PORT || 3000; // Define the port to listen on
-const TIMEOUT = 500; // Set the timeout for HTTP requests to 500 milliseconds
 
 // Define a GET endpoint at '/numbers'
 app.get('/numbers', async (req, res) => {
@@ -27,7 +24,7 @@ app.get('/numbers', async (req, res) => {
         for (const url of urls) {
             try {
                 // Make a GET request to the URL with a timeout
-                const response = await axios.get(url, { timeout: TIMEOUT });
+                const response = await axios.get(url);
                 // Add the 'numbers' array from the response to the list
                 numberSets.push(response.data.numbers);
             } catch (error) {
